@@ -1,0 +1,30 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Node / Frontend
+node_modules/
+.next/
+out/
+dist/
+
+# Logs & artifacts
+*.log
+coverage/
+
+# Env & secrets
+.env
+.env.*
+

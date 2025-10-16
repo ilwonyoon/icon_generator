@@ -1,0 +1,14 @@
+{
+  "extends": ["next", "next/core-web-vitals"],
+  "plugins": ["@tanstack/query"],
+  "rules": {
+    "@tanstack/query/exhaustive-deps": "warn",
+    "react/jsx-curly-brace-presence": ["warn", "never"],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["../", "../../"]
+      }
+    ]
+  }
+}
