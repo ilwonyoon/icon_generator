@@ -59,6 +59,13 @@ export function StyleProfilePreview() {
     }
   };
 
+  const formatValue = (value: number | undefined, digits = 2, suffix = " px") => {
+    if (value === undefined || Number.isNaN(value)) {
+      return "N/A";
+    }
+    return `${value.toFixed(digits)}${suffix}`;
+  };
+
   return (
     <div className="grid gap-4 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
       <header className="flex items-center justify-between">
@@ -77,12 +84,12 @@ export function StyleProfilePreview() {
               : "None"
           }
         />
-        <ProfileItem label="Corner radius" value={`${adjustedCorner.toFixed(2)} px`} />
+        <ProfileItem label="Corner radius" value={formatValue(adjustedCorner)} />
         <ProfileItem label="Contrast" value={profile.contrastMode === "mono" ? "Monochrome" : "Palette"} />
-        <ProfileItem label="Complexity" value={profile.complexityScore.toFixed(2)} />
-        <ProfileItem label="Symmetry" value={profile.symmetryScore.toFixed(2)} />
+        <ProfileItem label="Complexity" value={formatValue(profile.complexityScore, 2, "")} />
+        <ProfileItem label="Symmetry" value={formatValue(profile.symmetryScore, 2, "")} />
         {profile.alignmentGridFit !== undefined && (
-          <ProfileItem label="Grid fit" value={profile.alignmentGridFit.toFixed(2)} />
+          <ProfileItem label="Grid fit" value={formatValue(profile.alignmentGridFit, 2, "")} />
         )}
         <ProfileItem
           label="Consistency"
